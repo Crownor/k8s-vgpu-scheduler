@@ -5,7 +5,7 @@ entries:
     appVersion: 0.0.2
     created: "2023-06-06T07:06:15.898533138Z"
     description: 4paradigm vgpu for kubernetes
-    digest: 66baca0e1480fd363f1a6c45b4b60f71078fc018838a68390d5d3e8856533d21
+    digest: c6982454367a9dd816a299ca2a8f51d623cc2784ee98bbc3baa6beb59390879f
     keywords:
     - vgpu
     - gpu
