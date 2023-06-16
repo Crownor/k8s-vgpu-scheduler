@@ -5,7 +5,7 @@ entries:
     appVersion: 0.0.2
     created: "2023-06-06T07:06:15.898533138Z"
     description: 4paradigm vgpu for kubernetes
-    digest: 82d28a066e32a2dde5eecb29908d67b36f44f7301bca02cedf1c7f3002522adf
+    digest: 66baca0e1480fd363f1a6c45b4b60f71078fc018838a68390d5d3e8856533d21
     keywords:
     - vgpu
     - gpu
@@ -16,6 +16,6 @@ entries:
     name: vgpu
     type: application
     urls:
-    - https://4paradigm.github.io/k8s-vgpu-scheduler/vgpu-2.0.0.tgz
+    - https://crownor.github.io/k8s-vgpu-scheduler/vgpu-2.0.0.tgz
     version: 2.0.0
 generated: "2023-06-06T07:06:15.893160293Z"
