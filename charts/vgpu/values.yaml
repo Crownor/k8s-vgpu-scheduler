@@ -29,7 +29,7 @@ scheduler:
   defaultCores: 0
   kubeScheduler:
     imageTag: "v1.20.0"
-    image: registry.cn-hangzhou.aliyuncs.com/google_containers/kube-scheduler
+    image: hub.kdsec.org/lab/google_containers/kube-scheduler
     imagePullPolicy: IfNotPresent
     extraNewArgs:
       - --config=/config/config.yaml
@@ -39,20 +39,20 @@ scheduler:
       - --leader-elect=false
       - -v=4
   extender:
-    image: "4pdosc/k8s-vdevice"
+    image: "hub.kdsec.org/lab/4pdosc/k8s-vdevice"
     #image: "m7-ieg-pico-test01:5000/k8s-vgpu-test:latest"
     imagePullPolicy: IfNotPresent
     extraArgs:
       - --debug
       - -v=4
   podAnnotations: {}
-  nodeSelector: 
+  nodeSelector:
     gpu: "on"
   tolerations: []
   #serviceAccountName: "4pd-vgpu-scheduler-sa"
   patch:
-    image: docker.io/jettech/kube-webhook-certgen:v1.5.2
-    imageNew: liangjw/kube-webhook-certgen:v1.1.1
+    image: hub.kdsec.org/lab/jettech/kube-webhook-certgen:v1.5.2
+    imageNew: hub.kdsec.org/lab/liangjw/kube-webhook-certgen:v1.1.1
     imagePullPolicy: IfNotPresent
     priorityClassName: ""
     podAnnotations: {}
@@ -67,9 +67,9 @@ scheduler:
     annotations: {}
 
 devicePlugin:
-  image: "4pdosc/k8s-vdevice"
+  image: "hub.kdsec.org/lab/4pdosc/k8s-vdevice"
   #image: "m7-ieg-pico-test01:5000/k8s-vgpu-0727:latest"
-  monitorimage: "4pdosc/k8s-vdevice"
+  monitorimage: "hub.kdsec.org/lab/4pdosc/k8s-vdevice"
   #monitorimage: "m7-ieg-pico-test01:5000/k8s-vgpu-test:latest"
   monitorctrPath: /usr/local/vgpu/containers
   imagePullPolicy: IfNotPresent
@@ -80,10 +80,10 @@ devicePlugin:
   disablecorelimit: "false"
   extraArgs:
     - -v=4
-  
+
   service:
     httpPort: 31992
-    
+
   pluginPath: /var/lib/kubelet/device-plugins
   libPath: /usr/local/vgpu
   sockPath: /var/lib/4pdvgpu
@@ -94,4 +94,3 @@ devicePlugin:
   mlunodeSelector:
     mlu: "on"
   tolerations: []
-
